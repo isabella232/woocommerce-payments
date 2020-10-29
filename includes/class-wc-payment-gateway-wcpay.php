@@ -128,6 +128,20 @@ class WC_Payment_Gateway_WCPay extends WC_Payment_Gateway_CC {
 				'description' => __( 'Charge must be captured within 7 days of authorization, otherwise the authorization and order will be canceled.', 'woocommerce-payments' ),
 				'default'     => 'no',
 			],
+			'payment_request'              => [
+				'title'       => __( 'Payment Request Button', 'woocommerce-gateway-stripe' ),
+				'label'       => sprintf(
+					/* translators: 1) br tag 2) Stripe anchor tag 3) Apple anchor tag */
+					__( 'Enable Payment Request Button (Apple Pay, Google Pay, and more). %1$sBy using Apple Pay, you agree to %2$s and %3$s\'s terms of service.', 'woocommerce-gateway-stripe' ),
+					'<br />',
+					'<a href="https://stripe.com/apple-pay/legal" target="_blank">Stripe</a>',
+					'<a href="https://developer.apple.com/apple-pay/acceptable-use-guidelines-for-websites/" target="_blank">Apple</a>'
+				),
+				'type'        => 'checkbox',
+				'description' => __( 'If enabled, users will be able to pay using Apple Pay or Chrome Payment Request if supported by the browser.', 'woocommerce-gateway-stripe' ),
+				'default'     => 'yes',
+				'desc_tip'    => true,
+			],
 			'test_mode'                    => [
 				'title'       => __( 'Test mode', 'woocommerce-payments' ),
 				'label'       => __( 'Enable test mode', 'woocommerce-payments' ),
