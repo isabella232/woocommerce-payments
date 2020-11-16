@@ -849,7 +849,7 @@ class WC_Payments_API_Client {
 		if ( $is_site_specific ) {
 			$url .= '/' . self::ENDPOINT_SITE_FRAGMENT;
 		}
-		$url .= '/' . self::ENDPOINT_REST_BASE . '/' . $api;
+		$url .= '/' . apply_filters( 'wcpay_api_rest_base', self::ENDPOINT_REST_BASE ) . '/' . $api;
 
 		$body = null;
 
